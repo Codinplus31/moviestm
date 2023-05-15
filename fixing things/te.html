@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+  .container{
+position: fixed;
+top: 0;
+  }
+
+
+
+  .title{
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width:100%;
+   background: linear-gradient(to right  top,rgba(0,0,0,0.8) 43%, transparent);
+    height:400px;
+  }
+  .til-head{
+    width:60%;
+  /* flex-direction: column; */
+    display:flex;
+    justify-content:flex-start;
+   align-items:center;
+   /* border: 1px solid red; */
+  }
+  
+  .til-head> p{
+    align-self: flex-end;
+        margin-left:35px;
+        font-size:22px;
+    font-weight: 300;
+color:lightgrey;
+  }
+  .til-head > h1 {
+    margin-left:3.5%;
+    font-weight: 900;
+    color:lightgrey;
+    text-transform: uppercase;
+    font-size:clamp(20%,4vw,30px);
+
+  }
+  .set{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:3.0%;
+    margin-bottom: 2.0%;
+    width:100%;
+  height:clamp(45px,5vw,120px);
+
+  }
+  .set > div{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width: 40%;
+    /* border: 1px solid red; */
+height: 100%;
+  }
+  .set > div > button{
+    position: relative;
+    width:35%;
+    height:80%;
+    outline:0;
+        font-size:clamp(8%,2vw,30px);
+display:flex;
+
+align-items:center;
+    border-radius:40px;
+
+  }
+    .set > div > button::after{
+position: absolute;
+content:"";
+display:none;
+    /* width:240px; */
+    /* width:50%; */
+
+    /* height:7%; */
+    border:2px solid white;
+border-radius:49px;
+transition: all 1s;
+
+
+}
+    .set > div > button:first-child:active::after{
+display:block;
+left: 50%;
+transform: translate(-50%);
+    width:102%;
+    height: 102% !important;
+
+}
+    .set > div > button:last-child:active::after{
+      width:102%;
+      display:block;
+    height:102%;
+    left: 50%;
+transform: translate(-50%);
+
+}
+
+
+    .set > div > button > svg{
+width: clamp(15px,5vw,80%);
+  height: clamp(15px,5vw,80%);
+
+}
+.set > div > button:last-child > svg{
+  width: clamp(15px,2vw,60%)!important;
+  height: clamp(15px,2vw,60%)!important;
+
+  margin-left:4.0%;
+}
+
+
+    .set > div > button:first-child > span{
+      margin-left:1.8%;
+    }
+
+    .set > div > button:first-child {
+      background: rgba(255,245,235,0.9);
+      border:1px solid white;
+      background: white;
+
+      margin-left:20px;
+    }
+        .set > div > button:first-child::after{
+content:" ";
+left:-5px;
+        }
+    
+  .set > div > button:last-child{
+
+background: linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(25px);
+    border:0;
+    box-shadow:0 5px 30px 5px rgba(0,0,0,0.8);
+    margin-left:20px;
+    color:white;
+justify-content:space-evenly;
+width:clamp(36px,4vw,10%);
+    /* height: 70%; */
+  }
+    .set > div > button:last-child > span{
+margin-right:9px;      
+      
+}
+    .set > div > button:last-child:active{
+background: white;
+color:black;
+}
+.set >button{
+  border-radius:50%;
+  margin-right:30px;
+  /* width:6%; */
+  color:white;
+  outline:0;
+  width: clamp(40px,5vw,9%);
+      height:100%;
+      
+  background: none;
+  border:1px solid white;
+  /* height:80px; */
+}
+.set >button > svg{
+  width: clamp(15px,5vw,80%);
+  height: clamp(15px,5vw,80%);
+
+
+}
+
+.bar{
+  /* height:80px; */
+  display:flex;
+width: 100%;
+background: rgba(0,0,0,0.8);
+/* border: 1px solid red; */
+height:clamp(20px,5vw,120px);
+}
+.bar span{
+  position:relative;
+text-decoration: none;
+color:white;
+font-size:clamp(20%, 3vw,40px);
+  margin-left:4.2%;
+  margin-top: 0.4%;
+
+}
+.bar .a:first-child{
+ margin-left:2.1%;
+}
+.go{
+  position:absolute;
+  align-self:flex-end;
+  width:119px;
+  height:0.3%;
+  margin-top: 3.4%;
+
+  
+
+  background:white;
+}  
+.now{
+  background: rgba(0,0,0,0.8);
+width: 100%;
+  
+margin:0px!important;
+border:1px solid transparent;
+}
+.hcard{
+  background:#E70810!important;
+margin-right: 45px;
+}
+.light{
+  background: linear-gradient(transparent,rgba(0,0,0,0.8) 80%)
+}
+
+.goll{
+  /* background: linear-gradient(transparent,rgba(0,0,0,0.8)) !important; */
+  /* background: linear-gradient(to right  top,rgba(0,0,0,0.8) 43%, transparent); */
+  background: rgba(0,0,0,0.8);
+
+}
+
+@media screen and (max-width:600px){
+
+.new{
+  height: 46vh!important;
+}
+.til-head{
+  width:100%;
+justify-content: center;
+}
+.set> div{
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
+  width: 100%; 
+}
+.bar{
+/* height:clamp(40px,5vw,140px) !important; */
+
+}
+.bar > span{
+  /* height:clamp(20%,5vw,40px) !important; */
+
+
+
+} 
+ .set > div > button > svg{
+  width: 75%!important;
+  height: 75%!important;
+
+
+}
+.set > div > button:active{
+background: white !important;
+color:black !important;
+}
+
+.set > div > button:first-child > svg{
+ width: 50%!important;
+  height: 50%!important;
+
+}
+
+.set > div > button:first-child , .set > div > button:last-child {
+  border-radius: 4px;
+  width: 10%;
+  background: linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(25px);
+color: white;
+border: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+  /* margin-right: 10.0%!important; */
+}
+
+.set > div > button {
+ margin: 0!important;
+box-shadow: rgba(0,0,0,0.25) 0px 0.0625em 0.0625em, rgba(0,0,0,0.4) 0px 0.125em 0.5em, rgba(255,255,255,0.1) 0px 0px 0px 1px inset;
+}
+.set > div > button::after {
+display: none!important;
+  }
+
+.set > div > button:nth-child(2){
+  border-radius: 4px!important;
+  outline: none!important;
+  display: flex;
+  font-size: 78%;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  border:0;
+}
+.set > div > button:nth-child(2) span{
+display: none;
+
+}
+
+}
+</style>
+
+<body class="">
+    <img class="new" src="" alt="">
+
+  <div class="light">
+  <div class="container">
+  <header>
+    <div class="div">
+      
+    <div class="nav">
+      <img src="726-7268885_15-off-png.png" alt="">
+      <span class="log">igram</span>
+
+    </div>
+    <div class="search ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" color="white" class="bi bi-search" viewBox="0 0 16 16">  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg>
+<a class="bn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" color="white" class="bi bi-bell" viewBox="0 0 16 16">
+  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+</svg></a>
+<div class="lok"></div>
+    </div>
+        </div>
+
+  </header>
+</div>
+<div class="title">
+  <div class="til-head">
+    <h1>shehulk</h1>
+    <!-- <p>She-Hulk (Jennifer Walters) is a fictional character appearing in American comic books published by Marvel Comics. Created by writer Stan Lee and artist John Buscema, she first appeared in The Savage She-Hulk #1 (cover-dated February 1980).</p> -->
+  </div>
+  <div class="set">
+    <div>
+    <button type="button" class="bn"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+      <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
+    </svg>  <span>Play</span></button>
+    <button>
+       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+    </svg> </button>
+    </div>
+    <button type="button" class="adlist">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+    </svg></button>
+  </div>
+</div>
+<div class='bar'>
+  <span href="" class="a">suggest</span>
+   <span href="" class="a">trailer</span>
+  <span href="" class="a">details</span>
+<div class="go"></div>
+</div>
+
+<!-- <div class="now">
+<section class="sec">
+<div class="hcard">
+</div> 
+</section>  
+
+<section class="sec scen">
+</section>
+</div>
+-->
+<div class="goll">
+  <div><span>Top Movies</span> <div class="left">
+     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>
+    </div><div class="right"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg> </div></div>
+    <section class="sec sc">
+      <!--<div class="hcard"><div><img src="57a756f9-8787-4ed6-b602-31b5ca60143a.svg"/></div></div>-->
+    </section>
+  
+  <div><span>Sci-Fi Movies</span> <div class="left"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg> </div><div class="right"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg> </div></div>
+  <section class="sec scen">
+    
+  </section>
+  
+  <div><span>Animations</span>  <div class="left">  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg> </div> <div class="right"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg></div></div>
+  <section class="sec scens">
+  
+  </section>
+  
+  <div><span>Trending Movies</span> <div class="left"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>  </div> <div class="right"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg> </div></div>
+  <section class="sec scenn">
+  
+  </section>
+  <div><span>Anime Series</span> <div class="left"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>  </div> <div class="right"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg> </div></div>
+  <section class="sec scenm">
+  
+  </section>
+  </div>
+</div>
+<script src="maxlet.min.js"></script>
+<script src="go.js"></script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
